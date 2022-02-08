@@ -1,0 +1,6 @@
+/* Lié au footer */
+.fixed-bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
