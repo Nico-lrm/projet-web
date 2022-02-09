@@ -10,44 +10,44 @@
         <script src="public/js/script.js"></script>
     </head>
     <body id="body">
-        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-            <div class="container-fluid m-auto">
-                <a class="navbar-brand" href="#">ShareMyHouse</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar" aria-controls="menuNavbar" aria-expanded="false" aria-label="Afficher le menu">>
-                    <span class="navbar-toggle-icon"></span>
-                </button>        <div id="test">
-                <div class="collapse navbar-collapse justify-content-end" id="menuNavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Accueil</a>
-                        </li>
-                        <?php if(isset($_SESSION["login"])):?>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Liste des locations</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Mes réservations</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Mes locations</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Mon Profil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">Déconnexion</a>
-                        </li>
-                        <?php else: ?>
-                        <li class="nav-item">
-                            <a href="#modalConnexion" class="nav-link" data-bs-toggle="modal">Connexion</a>
-                        </li>
-                        <?php endif ?>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        
         <header>
+            <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+                <div class="container-fluid m-auto">
+                    <a class="navbar-brand" href="#">ShareMyHouse</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar" aria-controls="menuNavbar" aria-expanded="false" aria-label="Afficher le menu">>
+                        <span class="navbar-toggle-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="menuNavbar">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Accueil</a>
+                            </li>
+                            <?php if(isset($_SESSION["login"])):?>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Liste des locations</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Mes réservations</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Mes locations</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Mon Profil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link">Déconnexion</a>
+                            </li>
+                            <?php else: ?>
+                            <li class="nav-item">
+                                <a href="#modalConnexion" class="nav-link" data-bs-toggle="modal">Connexion</a>
+                            </li>
+                            <?php endif ?>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <?php if(!isset($_SESSION["login"])) :?>
             <!-- Modal de connexion-->
             <div class="modal fade" id="modalConnexion" tabindex="-1" aria-labelledby="" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
@@ -81,6 +81,7 @@
                 </div>
             </div>
 
+            
             <!-- Modal d'inscription -->
             <div class="modal fade" id="modalInscription" tabindex="-1" aria-labelledby="" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
@@ -135,7 +136,9 @@
                     </div>
                 </div>
             </div>
+            <?php endif ?>
         </header>
+        
 
         <!-- Contenu principal, chargés dynamiquement via PHP -->
         <main>  
