@@ -1,0 +1,18 @@
+/* Lié au footer */
+.fixed-bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+.hidden {
+    display: none !important;
+}
+#spinner-connect {
+    animation-duration: 1s !important;
+    width: 1rem !important;
+    height: 1rem !important;
+}
+.btn-form {
+    align-items: center; 
+    display: flex;
+}
