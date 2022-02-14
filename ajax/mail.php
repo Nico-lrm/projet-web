@@ -1,7 +1,7 @@
 <?php
     ini_set('SMTP', 'smtp.orange.fr');
     ini_set('smtp_port', '25');
-    ini_set('sendmail_from', 'lormiernicolas60@gmail.com');
+    ini_set('sendmail_from', 'test@gmail.com');
     $regex_head = '/[\n\r$*\\|`~%<>]/';
     /* On vérifie qu'il n'y a aucun header dans les champs */ 
     $email = $_COOKIE['email'];
@@ -13,7 +13,7 @@
         if (preg_match($regex_head, $_POST['subject']) || preg_match($regex_head, $_POST['body'])) {  
             echo 'Erreur';
         } else {
-            mail('webmaster@nicolaslormier.fr', utf8_decode($subject), utf8_decode($body));
+            mail('test@gmail.fr', utf8_decode($subject), utf8_decode($body));
             echo $_SESSION['email'];
             echo 'Votre mail à bien été envoyé.';
         }
