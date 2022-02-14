@@ -7,7 +7,7 @@
 .hidden {
     display: none !important;
 }
-#spinner-connect {
+#spinner-si {
     animation-duration: 1s !important;
     width: 1rem !important;
     height: 1rem !important;
