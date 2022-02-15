@@ -1,6 +1,6 @@
 //Regex
 var regexEmail = /^[A-Za-z0-9._\-]+@[A-Za-z._\-]+\.[a-z]{2,4}$/;
-var regex = /^[A-Za-z0-9À-ÖØ-öø-ÿ\- \n&/]+$/;
+var regex = /^[A-Za-z0-9À-ÖØ-öø-ÿ\-_&^$\*/]+$/
 
 //Fonction qui défini si le pied de page se colle en bas de la fenêtre 
 //en fonction de la taille de celle ci par rapport au contenu (au chargement de la page)

@@ -10,19 +10,12 @@
         return $db;
     }
     $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
-    $password = $_POST['password'];
     $db = dbConnect();
     $users = $db->prepare('SELECT * FROM user WHERE email = "'.$email.'"');
     $users->execute();
     if ($users->rowCount() > 0) {
-        $user = $users->fetchAll(PDO::FETCH_ASSOC);
-        if (!password_verify($password, $user[0]['password'])) {
-            return http_response_code(400);
-        } else {
-            return http_response_code(200);
-        }
-            
-    } else {
         return http_response_code(400);
+    } else {
+        return http_response_code(200);
     }
 ?>

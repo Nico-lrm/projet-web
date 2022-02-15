@@ -7,7 +7,7 @@
 .hidden {
     display: none !important;
 }
-#spinner-si {
+#spinner-si, #spinner-su {
     animation-duration: 1s !important;
     width: 1rem !important;
     height: 1rem !important;
@@ -15,4 +15,12 @@
 .btn-form {
     align-items: center; 
     display: flex;
+}
+.nav-item {
+    display: flex !important;
+    align-items: center !important;
+}
+i {
+    color: rgba(255,255,255,0.55);
+    margin-right: 0.25rem;
 }
