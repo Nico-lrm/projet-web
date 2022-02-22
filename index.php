@@ -28,6 +28,17 @@
                         throw new Exception("Impossible de créer un compte une fois connecté(e)");
                     }
                 break;
+                case "locations" : 
+                    if(isset($_SESSION["loggedin"])) {
+                        if(isset($_GET['id'])) {
+                            getLocationsUnique();
+                        } else {
+                            getLocations();
+                        }
+                    } else {
+                        throw new Exception("Veuillez-vous connecter avant de parcourir le site");
+                    }
+                break;
                 case "dc" :
                     sessionDestroy();
                 default: 

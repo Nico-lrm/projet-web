@@ -26,7 +26,7 @@
                             </li>
                             <?php if(isset($_SESSION["loggedin"])):?>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Liste des locations</a>
+                                <a href="?page=locations" class="nav-link">Liste des locations</a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">Mes réservations</a>
@@ -83,7 +83,6 @@
                         </div>
                         <div class="modal-footer">
                             <a href="#" onclick="changeModal()">Créer son compte</a>
-                            <a href="">Mot de passe oublié ?</a>
                         </div>
                     </div>
                 </div>
@@ -157,7 +156,7 @@
         </header>
         
         <!-- Contenu principal, chargés dynamiquement via PHP -->
-        <main>  
+        <main class="container-fluid">  
             <?= $content ?>
         </main>
         
