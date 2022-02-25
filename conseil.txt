@@ -1,4 +1,5 @@
 Pour intégrer vos pages :
+
 - Il faut définir vos variables $title, $style et $script en haut de votre page :
 
 Pour la variable $script -> '<script src="public/js/nom_du_fichier.js"></script>' pour éviter tout bug de script au chargement de la page
@@ -23,3 +24,7 @@ Si vous vous sentez d'attaque (rien n'est obligé, c'est plus pour de la lisibil
 <?php else: ?> // Pareil sur le else, il y a bien ':' a la fin !
     ...
 <?php endif ?> //Par contre, pas ici !
+
+
+J'ai essayé d'ajouter la majeure partie des explications sur les fichiers, et y'a quelque redirection vers d'autre page parce que ça m'a déjà pris 3h les commentaires xD
+Bon courage et je vous dis a la semaine pro ! (ou plus tôt si vous voulez :p)
