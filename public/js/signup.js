@@ -6,6 +6,7 @@ function calculate_age(dob) {
     return Math.abs(age_dt.getUTCFullYear() - 1970);
 }
 
+//AJAX pour le formulaire d'inscription, éviter les doublons d'email
 document.getElementById("form-su").addEventListener("submit", function(e) {
     e.preventDefault();
 
@@ -17,7 +18,7 @@ document.getElementById("form-su").addEventListener("submit", function(e) {
     var password_su = document.getElementById("password-su").value
     var confirm_password_su = document.getElementById("confirm-password-su").value
 
-
+    //Grosse condition pour vérifié tout les champs d'un coup vu que la gestion d'erreur s'affiche en direct chez l'utilisateur, c'est des modifs qu'il doit faire lui même
     if(email_su.match(regexEmail) && name_su.length > 0 && firstname_su.length > 0 && calculate_age(new Date(birthday_su)) >= 18 && password_su.match(regex) && password_su.length >= 8 && password_su == confirm_password_su) {
         //Modification des éléments du bouton
         document.getElementById('spinner-su').classList.toggle("hidden");
@@ -34,6 +35,7 @@ document.getElementById("form-su").addEventListener("submit", function(e) {
         //Une fois chargé, on traite les infos
         xhttp.onload = function() {
             if (this.status == 400) {
+                //Si l'email existe déjà, on réactive les boutons pour que l'utilisateur corrige son erreur et puisse renvoyer le formulaire
                 alert("Erreur : L'adresse e-mail existe déjà");
                 document.getElementById('spinner-su').classList.toggle("hidden");
                 document.getElementById('button-text-su').innerText = "Créer son compte";
@@ -45,10 +47,12 @@ document.getElementById("form-su").addEventListener("submit", function(e) {
         //On envoie la requête
         xhttp.send("email="+email_su);
     } else {
+        //Si l'un des champs est mal renseigné, on fait une petite pop-up en JS via alert(message)
         alert("Erreur : l'un des champs est mal renseigné, veuillez-vous référer aux erreurs sur le formulaire")
     }
 })
 
+/* Vérification des champs du formulaire d'inscription, voir le fichier "login.js" pour les explications (sachant que c'est exactement la même chose) */
 document.getElementById("email-su").addEventListener("focusout", function(e) {
     if(document.getElementById("email-su").value != "") {
         if(document.getElementById("email-su").value.match(regexEmail)) {
@@ -100,6 +104,7 @@ document.getElementById("firstname-su").addEventListener("focusout", function(e)
     }
 })
 document.getElementById("birthday-su").addEventListener("focusout", function(e) {
+    //Pour calculer l'âge de l'utilisateur (> 18 ans), on est obligé de transformer en type Date la valeur du champ "birthday-su" qui est en texte
     if(calculate_age(new Date(document.getElementById("birthday-su").value)) >= 18) {
         if(!(document.getElementById("birthday-su").classList.contains("is-valid"))) {
             if(document.getElementById("birthday-su").classList.contains("is-invalid")) {
@@ -143,6 +148,8 @@ document.getElementById("password-su").addEventListener("focusout", function(e) 
             document.getElementById("password-su").classList.remove("is-invalid")
         }
     }
+    //Ici, en fonction du champ password, on fait un vérification du côté de la confirmation pour éviter d'avoir 2 mdp différents mais qui peuvent tout les deux avoir la classe
+    //is-valid
     if(document.getElementById("confirm-password-su").value != "") {
         if(document.getElementById("confirm-password-su").value == document.getElementById("password-su").value) {
             if(!(document.getElementById("confirm-password-su").classList.contains("is-valid"))) {

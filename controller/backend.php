@@ -34,9 +34,13 @@ function addUser($firstname, $name, $birthday, $email, $password) {
     }
 }
 
+//Fonction qui vérifie si l'utilisateur a bien 18 ans (soustraction de la date passé par l'utilisateur moins la date acutelle - 18 ans)
 function verifAge($date) { 
     $date_birthday = date_create($date);
     $date_local = date_create("now");
+
+    //date_sub(date_local, date a soustraire)
+    //date_interval_create_from_date_string("text") -> Vous pouvez directement créer une date a partir de texte
     date_sub($date_local, date_interval_create_from_date_string("18 years"));
     return ($date_local > $date_birthday);
 } 
@@ -44,9 +48,12 @@ function verifAge($date) {
 //Connexion d'un utilisateur - Controller - Les vérifications se font du côté asynchrone de la fonction (cf. ajax/password-verify.php)
 function loginUser($email, $password) {
     $user[0] = connectUser($email);
+
+    //Si notre utilisateur n'existe pas et renvoie null
     if ($user[0] === null) {
         throw new Exception("Connexion Impossible.");
     } else {
+        //Sinon, on le connecte et on le redirige
         if (password_verify($password, $user[0]['password'])) {
             $_SESSION['loggedin'] = true;
             header('Location: /');
@@ -54,8 +61,9 @@ function loginUser($email, $password) {
     }
 }
 
+//Pour se déconnecter, au final c'est principalement le session_destroy() qui fait la déco et ensuite nous on redirige vers l'accueil
 function sessionDestroy() {
     session_destroy();
-    header('Location: ?page=home');
+    header('Location: /');
 }
 ?>

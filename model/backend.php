@@ -1,4 +1,13 @@
 <?php
+
+    /**
+     * Tout ce qui est interaction avec la base de donnée se passe dans le model
+     * La il s'agit des insertions & autre, donc pour ce qui est traitement et pas récupération
+     * 
+     * Pour la récupération de données de la bdd vers l'affichage, créer le fichier 'frontend.php' dans le dossier 
+     * model/ 
+    */
+
     // Connexion à la base de données
     function dbConnect() {
         $srv = "localhost";
@@ -36,11 +45,7 @@
         $users = $db->prepare('SELECT * FROM user WHERE email = :email');
         $users->bindParam(':email', $email);
         $users->execute();
-        if ($users ->rowCount() > 0) {
-            $user = $users->fetchAll(PDO::FETCH_ASSOC);
-            return $user[0];
-        } else {
-            throw new Exception('Pas d\'utilisateur trouvé.');
-        }
+        $user = $users->fetchAll(PDO::FETCH_ASSOC);
+        return $user[0];
     }
 ?>

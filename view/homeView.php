@@ -1,4 +1,5 @@
 <?php $title = 'Accueil' ?>
+<?php $script = '' ?>
 <?php ob_start(); ?>
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita impedit omnis eum, dignissimos iusto eaque alias obcaecati. Dolores, accusamus qui minus saepe dolorem amet obcaecati, officia dolore voluptas, incidunt repellendus.
     Aliquid iusto ab vero nam, minima molestias suscipit, eveniet itaque facilis quisquam ratione possimus nobis necessitatibus numquam sunt, veritatis eum eligendi officiis distinctio. Tenetur aspernatur natus error, blanditiis suscipit nesciunt.

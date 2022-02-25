@@ -1,0 +1,51 @@
+/* Pour la barre de recherche en haut de la fenêtre */
+.recherche {
+    -webkit-box-shadow: 0px 3px 7px 0px rgba(158,158,158,0.5);
+    -moz-box-shadow: 0px 3px 7px 0px rgba(158,158,158,1);
+    box-shadow: 0px 3px 7px 0px rgba(158,158,158,0.5);
+    background-color: white; 
+    height: 75px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items:center;
+}
+
+/* Redéfinition de la classe padding-x de Bootstrap */
+.px-5 {
+    padding-left: 2.25rem !important;
+    padding-right: 2.65rem !important;
+}
+
+/* Icône des sliders pour le menu "Filtres" */
+.bi-sliders {
+    color: black;
+    transition: all 0.20s;
+}
+
+/* Modification responsive - A ajouter sur chacune de vos pages CSS */
+@media (max-width: 575.98px) { 
+    .recherche {
+        display: grid;
+        grid-row-gap: 1rem;
+        justify-content: center;
+        height: auto;
+        padding: 1rem 0;
+    }
+    #affinage_s {
+        display: flex;
+        justify-content: center;
+    }
+    .px-5 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+}
+
+@media (max-width: 767.98px) {  }
+
+@media (max-width: 991.98px) {  }
+
+@media (max-width: 1199.98px) {  }
+
+@media (max-width: 1399.98px) {  }

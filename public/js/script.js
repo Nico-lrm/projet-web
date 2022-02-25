@@ -26,9 +26,3 @@ window.onresize = function() {
         }
     }
 }
-
-//Fonction pour le changement de modal (connexion <-> s'inscrire)
-function changeModal() {
-    $("#modalConnexion").modal("toggle")
-    $("#modalInscription").modal("toggle")
-}

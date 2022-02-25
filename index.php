@@ -1,4 +1,5 @@
 <?php
+    //On a toujours un session_start() au tout début, et dans l'index car on commence toujours pas l'index sur un site (et dans notre cas celui-ci charge les autres pages)
     session_start();
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -6,9 +7,15 @@
 
     require('controller/frontend.php');
     require('controller/backend.php');
-    // Récupérer la valeur de la variable page pour la gestion des erreurs
+
+    //try/Catch pour la gestion de nos erreur, dès qu'il y a une Exception il renvoie le msg associé
     try {
+
+        // Récupérer la valeur de la variable page pour rediriger sur une vue via sa fonction associé dans controller/frontend.php
         if(isset($_GET['page'])) {
+
+            //Un switch pour éviter un vieux if/else if/ else
+            //N'oubliez pas de mettre votre page ici et d'ajouter son lien dans la navbar ! (et renvoyer une exception par exemple pour les zones restreinte a un utilisateur connecté, s'il n'est pas co -> alors Exception)
             switch($_GET['page']) {
                 case "signin" :
                     if(!isset($_SESSION["loggedin"])) {
@@ -30,6 +37,7 @@
                 break;
                 case "locations" : 
                     if(isset($_SESSION["loggedin"])) {
+                        //Vu que les locations sont au même endroit, autant juste rajouter une variable a vérifié pour la redirection, la page changera de contenu a la fin en regardant la valeur de l'ID de la location (Pareil pour les réservations/locations)
                         if(isset($_GET['id'])) {
                             getLocationsUnique();
                         } else {
@@ -41,6 +49,9 @@
                 break;
                 case "dc" :
                     sessionDestroy();
+                break;
+
+                //Par défault, on renvoie la page d'accueil (on renverra plus tard l'erreur ici pour la jolie page d'Alex et Cora !)
                 default: 
                     getHome();
                 break;
