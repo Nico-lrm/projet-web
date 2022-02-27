@@ -23,20 +23,15 @@ html, body {
     box-sizing: border-box;
 }
 
+/* Marge de base des icones */
 i {
     margin-right: 0.25rem;
 }
 
-/* Navbar */
-.nav-item {
-    display: flex !important;
-    align-items: center !important;
-}
-
+/* Couleur des icones dans la navbar */
 nav i {
     color: rgba(255,255,255,0.55);
 }
-
 
 /* Modal - Formulaire de connexion et inscription */
 #spinner-si, #spinner-su {
@@ -61,16 +56,31 @@ nav i {
 
 
 /* Media queries pour le responsive */
-@media (max-width: 575.98px) { 
+@media (max-width: 1399.98px) { 
+    :root {
+        --font-size: 16px;
+    }
+}
+@media (max-width: 1199.98px) { 
+    :root {
+        --font-size: 15px;
+    }
+}
+
+@media (max-width: 991.98px) { 
     :root {
         --font-size: 14px;
     }
 }
 
-@media (max-width: 767.98px) {  }
+@media (max-width: 767.98px) { 
+    :root {
+        --font-size: 13px;
+    }
+}
 
-@media (max-width: 991.98px) {  }
-
-@media (max-width: 1199.98px) {  }
-
-@media (max-width: 1399.98px) {  }
+@media (max-width: 575.98px) { 
+    :root {
+        --font-size: 12px;
+    }
+}

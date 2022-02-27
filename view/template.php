@@ -12,9 +12,9 @@
         <link rel="stylesheet" href="public/css/<?= $style ?>.css">
         <script src="public/js/script.js"></script>
     </head>
-    <body id="body">
+    <body class="bg-light">
         <header>
-            <nav class="navbar navbar-dark bg-dark navbar-expand-lg px-4">
+            <nav class="navbar navbar-dark bg-dark navbar-expand-lg px-sm-4">
                 <div class="container-fluid m-auto">
                     <a class="navbar-brand" href="#">ShareMyHouse</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar" aria-controls="menuNavbar" aria-expanded="false" aria-label="Afficher le menu">>

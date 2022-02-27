@@ -76,7 +76,7 @@ Ensuite, pour les commandes :
     
     - Une fois votre commit fait, il vous suffit d'envoyer le tout sur le github !
      
-       git push -u origin votre_nom_de_branche         //Logiquement, le dernier est facultatif mais c'est une habitude que j'ai prise de l'écrire :p
+       git push -u origin votre_nom_de_branche         //Le dernier est facultatif mais c'est une habitude que j'ai prise :p
 
 
 
