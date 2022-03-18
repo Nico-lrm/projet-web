@@ -1,0 +1,30 @@
+Pour intégrer vos pages :
+
+- Il faut définir vos variables $title, $style et $script en haut de votre page :
+
+Pour la variable $script -> '<script src="public/js/nom_du_fichier.js"></script>' pour éviter tout bug de script au chargement de la page
+Pour la variable $style -> 'nom_du_fichier' suffit car chaque page a son CSS associé (comparé au script pas nécessaire sur l'accueil par exemple)
+Idem pour la variable $title
+
+ATTENTION : Tout votre HTML doit être entre les fonction ob_start(); et ob_get_clean();
+
+En dernier, on juste a require('template.php') pour intégrer la page au template !
+
+Si vous vous sentez d'attaque (rien n'est obligé, c'est plus pour de la lisibilité), vous pouvez utiliser les formes raccourci de PHP
+
+//Définir une variable
+<?php $nom_de_votre_variable = 'Erreur' ?>
+
+//Afficher une valeur
+<?= $nom_de_votre_variable ?>
+
+//Condition if...else
+<?php if(condition) :?> // Ici, faites TRES attention au ':' a la fin de la condition, sinon vous aurez une erreur
+    ...
+<?php else: ?> // Pareil sur le else, il y a bien ':' a la fin !
+    ...
+<?php endif ?> //Par contre, pas ici !
+
+
+J'ai essayé d'ajouter la majeure partie des explications sur les fichiers, et y'a quelque redirection vers d'autre page parce que ça m'a déjà pris 3h les commentaires xD
+Bon courage et je vous dis a la semaine pro ! (ou plus tôt si vous voulez :p)

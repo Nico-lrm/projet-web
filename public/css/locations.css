@@ -1,0 +1,109 @@
+/* Pour la barre de recherche en haut de la fenêtre - deprecated
+#recherche {
+    -webkit-box-shadow: 0px 3px 7px 0px rgba(158,158,158,0.5);
+    -moz-box-shadow: 0px 3px 7px 0px rgba(158,158,158,1);
+    box-shadow: 0px 3px 7px 0px rgba(158,158,158,0.5);
+    background-color: white; 
+    height: 75px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items:center;
+}
+*/
+
+/* Recherche - Version Bootstrap -- à améliorer */
+:root {
+    --height-search-bar : 75px;
+}
+#recherche, #recherche .row  {
+    height: var(--height-search-bar); 
+}
+/* Image des cartes */
+.card img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.card-price {
+    text-align: right;
+}
+
+/* Redéfinition de la classe padding-x de Bootstrap */
+.px-5 {
+    padding-left: 2.25rem !important;
+    padding-right: 2.65rem !important;
+}
+.card {
+    border-radius: 5px;
+}
+.card-text {
+    color: grey;
+}
+.card-title, .card-text {
+    margin-bottom: 0.25rem;
+}
+.modal-content {
+    max-height: 75% !important;    
+}
+
+/* Icône des sliders pour le menu "Filtres" */
+.bi-sliders {
+    color: black;
+    transition: all 0.20s;
+}
+
+/* Test de bouton de selection de la modal de recherche*/
+.selector i {
+    margin: 0;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.selector i:hover {
+    color: #AAA;
+}
+.selector span {
+    margin: 0 0.5rem;
+}
+
+/* Range de prix */
+#price-range::-moz-range-thumb,  #price-range::-webkit-range-thumb {
+    content: "Bonjour" !important;
+    color: black !important;
+    background-color: black !important;
+}
+#prince-range::-moz-range-track, #price-range::-webkit-range-thumb {
+    content: "Bonjour" !important;
+    color: black !important;
+    background-color: black !important;
+} 
+#prince-range::-moz-range-progress, #price-range::-webkit-range-progress {
+    content: "Bonjour" !important;
+    color: black !important;
+    background-color: black !important;
+} /*
+#price-range-value {
+    position: relative; background-color: black; color: white; padding: 1rem;border-radius:50%;top: -5.5rem; left: 22rem;
+}*/
+
+/* Modification responsive - A ajouter sur chacune de vos pages CSS */
+@media (max-width: 575.98px) { 
+    :root {
+        --height-search-bar : 90px;
+    }
+    #affinage-s {
+        display: flex;
+        justify-content: center;
+    }
+    .px-5 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+}
+
+@media (max-width: 767.98px) {  }
+
+@media (max-width: 991.98px) {  }
+
+@media (max-width: 1199.98px) {  }
+
+@media (max-width: 1399.98px) {  }

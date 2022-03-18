@@ -1,0 +1,84 @@
+Petit conseil pour git !
+
+Déjà, il faut le télécharger c'est pas mal ! 
+https://git-scm.com/
+
+Ensuite, pour les commandes : 
+    - Si c'est votre première fois (oulala) sur git, il faut d'abord configurer votre compte ! 
+      Et on commence par le plus important, votre connexion a votre compte, pour ce faire, il va vous falloir définir votre email et votre nom :
+
+      git config --global user.name "Obi-wan Kenobi"                // Ca peut être complétement autre chose que Prénom/Nom, mais pareil que votre compte github
+      git config --global user.email obiwan-kenobi@example.com      // Votre email rensigné sur github
+
+    - Maintenant que ça c'est fait, il va falloir que vous ayez l'accès a votre compte github pour votre adresse e-mail
+    mais les mots de passes c'est fini ça, c'est de la merde ! On utilise une clé SSH qu'on va générer (pour la connexion a distance a un serv, on utilise généralement le SSH)
+
+      Dans un terminal : 
+
+      ssh-keygen -t ed25519 -C "your_email@example.com" //Ici, on veut votre adresse github !
+
+    - Ensuite, on copie cette clé dans le tampon de Windows 
+
+       clip < ~/.ssh/id_ed25519.pub
+
+    - Aller dans votre navigateur web favori pour ensuite aller sur votre compte github, dans les paramètres touuut en bas du menu
+
+    - Vous aurez une option pour le SSH, il suffit d'ajouter une nouvelle clé SSH, et de coller directement le contenu préalablement copié 
+    (Le titre peut être le lien de nom de votre PC, pour repérer la clé et la supprimé quand vous changer/formater le PC) et voilà ! Vous pouvez maintenant continuer 
+
+
+
+
+
+
+
+    - A partir d'ici, il vous faudra TOUJOURS un terminal ouvert qui au niveau du projet (comme ce projet dans VS Code par exemple, au niveau des dossier ajax, view, etc)
+
+
+
+
+
+
+    
+    - Lorsque vous ouvrez votre dossier de projet pour la première fois, il faut toujours faire cette commande
+    
+        git init
+
+    Cela initialisera votre dépot git pour le dossier du projet
+
+    - Ensuite, il faut préciser où nous enverrons notre travail, pour ça, on ajoute une connexion a distance 
+
+        git remote add origin git@github:Nico-lrm/projet-web.git    //Le lien 'git@...' sera remplacé par vos futurs projets)
+
+    - Pour la première "mise en service", vous devez "pull" le travail déjà fait sous risque d'avoir de belles erreurs et l'impossibilité de bosser avec git correctement !
+
+        git pull origin       //Vu que la connexion a distance est défini au dessus, on peut l'utiliser maitenant comme variable pour l'URL
+    
+    - Une fois le dossier récupérer, vous pouvez maintenant coder en toute sérénité ! Une fois créés/modifiés, vous pouvez ajouter vos fichiers a votre prochain commit !
+
+        git add fichier1.extension chemin/fichier2.php etc..
+
+    ou tout ajouter d'un coup si vous changé de PC (par contre, pour fusionner les branches on devra revoir chaque ligne pour vérifié les différences et les routes avec tout les fichiers, mais ça c'est pas très graves tant que vous apprenez a utiliser git pour vos projets)
+
+        git add .
+
+    - Pour éviter d'écraser le travail des autres (et surtout les erreurs de pull, oui quelle horreur), chacun doit créer sa branche avec
+     
+       git branch votre_nom_de_branche
+
+    - Et il faut également passé sur cette branche, git ne change pas de branche tout seul (ce qui est un peu con quand même)
+    
+       git switch votre_nom_de_branche
+
+    - Maintenant que vous avez ajouter votre/vos fichier(s) et créer votre branche, il faut faire un commit, c-à-d une modification avec un msg précisant la modification
+
+       git commit -m "Votre descriptif des modifs"
+    
+    - Une fois votre commit fait, il vous suffit d'envoyer le tout sur le github !
+     
+       git push -u origin votre_nom_de_branche         //Le dernier est facultatif mais c'est une habitude que j'ai prise :p
+
+
+
+Voilà ! Si vous avez des problèmes, vous pouvez m'envoyer un msg tel/Discord et je verrais pour répondre le plus vite possible !
+Des bisous des cailloux ! 
